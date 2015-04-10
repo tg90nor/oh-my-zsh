@@ -1,6 +1,12 @@
 # Comment
 
-PROMPT='%{$fg[magenta]%}[%c] %{$reset_color%}'
+function ssh_connection() {
+  if [[ -n $SSH_CONNECTION ]]; then
+    echo "%{$fg[green]}%n@%m "
+  fi
+}
+
+PROMPT='$(ssh_connection)%{$fg[magenta]%}[%c] %{$reset_color%}'
 
 RPROMPT='%{$fg[magenta]%}$(git_prompt_info)%{$reset_color%} $(git_prompt_status)%{$reset_color%}'
 
