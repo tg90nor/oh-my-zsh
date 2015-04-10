@@ -2,7 +2,7 @@
 
 function ssh_connection() {
   if [[ -n $SSH_CONNECTION ]]; then
-    echo "%{$fg[green]}%n@%m "
+    echo "%{$fg[green]%}%n@%m "
   fi
 }
 
